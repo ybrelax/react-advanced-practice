@@ -1,50 +1,37 @@
-import React from "react";
+import React from 'react';
+import { Tabs } from 'antd';
+import OneComponent from './components/one';
+import TwoComponent from './components/two';
+import Form, { FormItem, Input } from './form/index';
 
+const { TabPane } = Tabs;
 
-/* children 组件 */
-function ChidrenComponent(){
-    return <div> In this chapter, let's learn about react props ! </div>
-}
-/* props 接受处理 */
-class PropsComponent extends React.Component{
-    componentDidMount(){
-        console.log(this,'_this')
-    }
-    render(){
-        const {  children , mes , renderName , say ,Component } = this.props
-        const renderFunction = children[0]
-        const renderComponent = children[1]
-        /* 对于子组件，不同的props是怎么被处理 */
-        return <div>
-            { renderFunction() }
-            { mes }
-            { renderName() }
-            { renderComponent }
-            <Component />
-            <button onClick={ () => say() } > change content </button>
-        </div>
-    }
-}
 /* props 定义绑定 */
-class Index extends React.Component{
-    state={  
-        mes: "hello,React"
-    }
-    node = null
-    say= () =>  this.setState({ mes:'let us learn React!' })
-    render(){
-        return <div>
-            <PropsComponent  
-               mes={this.state.mes}  // ① props 作为一个渲染数据源
-               say={ this.say  }     // ② props 作为一个回调函数 callback
-               Component={ ChidrenComponent } // ③ props 作为一个组件
-               renderName={ ()=><div> my name is alien </div> } // ④ props 作为渲染函数
-            >
-                { ()=> <div>hello,world</div>  } { /* ⑤render props */ }
-                <ChidrenComponent />             { /* ⑥render component */ }
-            </PropsComponent>
-        </div>
-    }
+class Index extends React.Component {
+  state = {
+    mes: 'hello,React',
+  };
+  node = null;
+  say = () => this.setState({ mes: 'let us learn React!' });
+  render() {
+    return (
+      <Tabs>
+        <TabPane tab="one" tabKey="1" key="1">
+          <OneComponent />
+        </TabPane>
+        <TabPane tab="two" tabKey="2" key="2">
+          <TwoComponent />
+        </TabPane>
+        <TabPane tab="表单" key="3">
+          <Form>
+            <FormItem name="test" label="表格">
+              <Input />
+            </FormItem>
+          </Form>
+        </TabPane>
+      </Tabs>
+    );
+  }
 }
 
 export default Index;
