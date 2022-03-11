@@ -1,19 +1,24 @@
 const routes = [
   { path: '/', component: '@/pages/index' },
   {
-    path: '/chapter-one',
-    component: '@/pages/chapter-one',
-    name: '章节一至三',
+    path: '/chapter1-3',
+    component: '@/pages/chapter1-3',
+    name: '基础篇一至三',
   },
   {
-    path: '/chapter-four',
-    component: '@/pages/chapter-four',
-    name: '章节四',
+    path: '/chapter1',
+    component: '@/pages/chapter4',
+    name: '基础篇-玄学State',
   },
   {
-    path: '/chapter-five',
+    path: '/chapter5',
     component: '@/pages/chapter5',
-    name: '章节五',
+    name: '基础篇-深入prop',
+  },
+  {
+    path: '/chapter6',
+    component: '@/pages/chapter6',
+    name: '基础篇-理解lifeCycle',
   },
 ];
 export default routes;
