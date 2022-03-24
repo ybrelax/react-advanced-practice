@@ -20,5 +20,10 @@ const routes = [
     component: '@/pages/chapter6',
     name: '基础篇-理解lifeCycle',
   },
+  {
+    path: '/chapter7',
+    component: '@/pages/chapter7',
+    name: '多功能ref',
+  },
 ];
 export default routes;
