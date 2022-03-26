@@ -1,8 +1,9 @@
-import React, { LegacyRef } from 'react';
+import React, { LegacyRef, useRef } from 'react';
 
 type RefType = LegacyRef<HTMLElement> | undefined;
 
 const Son: React.FC<{ grandRef: RefType }> = (props) => {
+    const ref = useRef()
   return (
     <div>
       <span ref={props.grandRef}>我是son</span>
