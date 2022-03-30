@@ -1,13 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 
-const HOC = (Component: Index) => {
+const HOC = (Component: typeof React.Component) => {
   class Wrap extends React.Component<{
     forwardedRef: unknown;
   }> {
     render() {
       const { forwardedRef, ...otherprops } = this.props;
       // Function components cannot be given refs 函数组件不能这么传递
-      return <Component ref={forwardedRef} {...otherprops} />;
+      return (
+        <Component
+          ref={forwardedRef as React.LegacyRef<React.Component>}
+          {...otherprops}
+        />
+      );
     }
   }
   return React.forwardRef((props, ref) => (
