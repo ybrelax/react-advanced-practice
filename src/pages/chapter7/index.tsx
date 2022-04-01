@@ -2,7 +2,10 @@ import React from 'react';
 import { Tabs, Button } from 'antd';
 import CaseOne from './cases/one';
 import CaseTwo from './cases/two';
-import CaseThree from "./cases/three"
+import CaseThree from './cases/three';
+import CaseFour from './cases/four';
+import CaseFive from './cases/five';
+import CaseSix from './cases/six';
 
 const { TabPane } = Tabs;
 
@@ -31,6 +34,15 @@ class Index extends React.Component {
         </TabPane>
         <TabPane tab="高阶组件转发" key="3">
           <CaseThree />
+        </TabPane>
+        <TabPane tab="ref组件通信(class)" key="4">
+          <CaseFour />
+        </TabPane>
+        <TabPane tab="ref组件通信(函数)" key="5">
+          <CaseFive />
+        </TabPane>
+        <TabPane tab="ref原理" key="6">
+          <CaseSix />
         </TabPane>
         <TabPane
           tab={
