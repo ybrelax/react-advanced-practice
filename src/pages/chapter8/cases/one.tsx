@@ -7,6 +7,7 @@ class ConsumerClass extends React.Component {
   }
 }
 
+// 必须接收
 ConsumerClass.contextType = Context;
 
 export default ConsumerClass;
