@@ -3,7 +3,7 @@ import React, { LegacyRef, useRef } from 'react';
 type RefType = LegacyRef<HTMLElement> | undefined;
 
 const Son: React.FC<{ grandRef: RefType }> = (props) => {
-    const ref = useRef()
+  const ref = useRef();
   return (
     <div>
       <span ref={props.grandRef}>我是son</span>
@@ -28,9 +28,15 @@ export default class GrandFatcher extends React.Component {
 
   componentDidMount() {
     console.log('node', this.node);
+    console.log('node1:', this.refs);
   }
 
   render() {
-    return <NewFather ref={(node) => (this.node = node)} />;
+    return (
+      <>
+        <NewFather ref={(node) => (this.node = node)} />
+        <div ref="node1">123</div>
+      </>
+    );
   }
 }

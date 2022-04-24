@@ -145,24 +145,24 @@ context.displayName = 'context demo'
 ```ts
 // provider
  <Context.Provider value={value}>
-        <Context1.Provider value={value1}>
-          <CaseFive />
-        </Context1.Provider>
+    <Context1.Provider value={value1}>
+        <CaseFive />
+    </Context1.Provider>
 </Context.Provider>
 
 // consumer
 <Context.Consumer>
 {(value) => (
-<Context1.Consumer>
-{(value1) => {
- return (
-  <div>
-    <p>value {value}</p>
-    <p>value1 {value1}</p>
-  </div> 
- )
- }}
-</Context1.Consumer>
+    <Context1.Consumer>
+    {(value1) => {
+        return (
+        <div>
+            <p>value {value}</p>
+            <p>value1 {value1}</p>
+        </div>
+        );
+    }}
+    </Context1.Consumer>
 )}
 </Context.Consumer>
 ```
@@ -247,8 +247,12 @@ const CaseSix: React.FC = () => {
 
 export default CaseSix;
 ```
+总结：
+1，总结了context的三种使用模式
+2、context的问题总结以及解决策略
+3、案例分析
 
-
+案例代码：https://github.com/ybrelax/react-advanced-practice/tree/master/src/pages/chapter8
 
 
 

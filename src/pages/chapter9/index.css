@@ -1,0 +1,24 @@
+.text {
+  color: blue;
+}
+
+:local(.text) {
+  color: red;
+}
+
+:global(.text) {
+  color: yellow;
+}
+
+.baseText {
+  color: palegreen;
+}
+.text3 {
+  composes: baseText;
+  background: burlywood;
+}
+
+.text4 {
+  composes: baseText from "./index1.css";
+  background: lightcyan; 
+}
