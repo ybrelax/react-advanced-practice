@@ -20,22 +20,24 @@ class Content extends React.Component<CaseType> {
   }
 }
 
-const Case5: React.FC = () => {
-  const HocContent = HOC(Content);
-  return (
-    <div>
-      <HocContent text={'this is case5 message'} />
-    </div>
-  );
-};
+// const Case5: React.FC = () => {
+//   const HocContent = HOC(Content);
+//   return (
+//     <div>
+//       <HocContent text={'this is case5 message'} />
+//     </div>
+//   );
+// };
 
-// class Case5 extends React.Component {
-//   render() {
-//     const HocContent = HOC(Content);
-//     return <div>
-//         <HocContent text={'this is case5 message'} />
-//     </div>;
-//   }
-// }
+class Case5 extends React.Component {
+  render() {
+    const HocContent = HOC(Content);
+    return (
+      <div>
+        <HocContent text={'this is case5 message'} />
+      </div>
+    );
+  }
+}
 
 export default Case5;
